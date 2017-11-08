@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.2.1",
+    "koa-views": "^6.1.1",
+    "nunjucks": "^3.0.1"
+  }
+}
