@@ -5,6 +5,7 @@ const views = require('koa-views');
 // const convert = require('koa-convert');
 // const onerror = require('koa-onerror');
 // const logger = require('koa-logger');
+const json = require('koa-json');
 const bodyparser = require('koa-bodyparser')();
 
 const app = new Koa();
@@ -12,6 +13,7 @@ const router = new Router();
 
 //middlewares
 app.use(bodyparser)
+app.use(json())
 // app.use(convert(bodyparser));
 // app.use(convert(json()));
 // app.use(convert(logger()));
@@ -33,6 +35,11 @@ router.post('/register', async function (ctx, next) {
   // ctx.body = 'Hello World!';
   console.log(ctx.request.body)
   ctx.body = 'register';
+});
+
+router.get('/api', async function (ctx, next) {
+  // ctx.router available
+  ctx.body = { foo: 'bar' };
 });
 
 app
